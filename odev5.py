@@ -8,10 +8,10 @@ YBS401 Odev 5 Dosyadan metin okuyup json dosyasi olusturma odevi.
 * ornek girdiler ve ornek ciktilar verilmistir.
 * degisiklik yapmaniz gereken yerler isaretlenmistir, diger kisimlari degistirmeyiniz.
 
-Ad Soyad:
-Ogrenci No:
-Bolum:
-Sinif:
+Ad Soyad:ebubekir gelve
+Ogrenci No:2018507034
+Bolum:ybs       
+Sinif:4
 
 """
 
@@ -32,28 +32,24 @@ class Person:
     def set_age(self, str_date):
         birthday = datetime.fromisoformat(str_date.strip())
         today = date.today()
-        """bu satirlari silip yerine 
-        dateutil.relativedelta() fonksiyonunu kullanarak
-        kisinin yasini hesaplayan kodu yaziniz"""
+       from dateutil.relativedelta
+    import relativedelta
 
     def toJSON(self):
         return json.dumps(self, default=lambda o: o.__dict__, sort_keys=True, indent=4)
 
 
 def read_file(file_name):
-    """bu satirlari silip yerine 
-    readlines() fonksiyonunu kullanarak
-    file_name ile adi verilen 
-    dosyayi okuyan ve okudugu satirlari lines icerisine atan kodu yaziniz"""
+    with open (dosya_1) as f:
+        lines=f.readlines()
     return lines
 
 
 def write_file(file_name, content):
-    """bu satirlari silip yerine 
-    write() fonksiyonunu kullanarak
-    file_name ile adi verilen 
-    content ile icerigi verilen 
-    dosyayi yazan kodu yaziniz"""
+    with open(dosya_1) as f:
+        f=open(file_name,"w")
+        f.write(content)
+        f.close
 
 
 def fill_person(lines):
